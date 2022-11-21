@@ -24,7 +24,7 @@
                               <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
                             </li>
                             <li class="nav-item px-4">
-                              <a class="nav-link" active href="#">{{ __('FREE TEMPLATES') }}</a>
+                              <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
                             </li>
                             <div class="dropdown px-4">
                             
@@ -36,7 +36,7 @@
                                 <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
                             </li>
                             <li class="nav-item px-4">
-                                <a class="nav-link" active href="#">{{ __('FREE TEMPLATES') }}</a>
+                                <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
                             </li>
                         @endif --}}
 

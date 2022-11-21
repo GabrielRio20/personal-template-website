@@ -108,7 +108,7 @@ Templateize - Template for any Projects
                       <a class="nav-link " href="{{ route('templates') }}">TEMPLATES</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link" active href="/templates">FREE TEMPLATE</a>
+                      <a class="nav-link"  href="{{ route('shopping') }}">FREE TEMPLATE</a>
                     </li>
                     <div class="dropdown px-4">
                       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
