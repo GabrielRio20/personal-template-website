@@ -1,75 +1,3 @@
-
-{{-- @extends('layout/main')
-
-@section('title')
-Templateize - Template for any Projects
-@endsection
-
-@section('container')
-  <h3>Proffesional Websites <br> Template for Any Project</h3><br>
-@endsection
-
-@section('search')
-<form class="d-flex" role="search">
-  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-  <button class="btn btn-outline-dark" type="submit">Search</button>
-</form>
-@endsection
-
-@section('category')
-<h3 id="template">Templates</h3>
-<div class="row">
-
-  <div class="col-sm-3">
-    <div class="card" style="width: 18rem">
-      <img src="https://bootstrapmade.com/content/templatefiles/Arsha/Arsha-bootstrap-website-template-md.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title" style="color: black">Special title treatment</h5>
-        <p class="card-text" style="color: black">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/templates/company/main" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3">
-    <div class="card" style="width: 18rem">
-      <img src="https://bootstrapmade.com/content/templatefiles/Impact/Impact-bootstrap-website-template-md.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title" style="color: black">Special title treatment</h5>
-        <p class="card-text" style="color: black">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="/templates/company/main" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3">
-    <div class="card" style="width: 18rem">
-      <img src="https://bootstrapmade.com/content/templatefiles/Yummy/Yummy-bootstrap-website-template-md.png" class="card-img-top" alt="..." href="/templates/company/main">
-      <div class="card-body">
-        <h5 class="card-title" style="color: black">Special title treatment</h5>
-        <p class="card-text" style="color: black">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3">
-    <div class="card" style="width: 18rem">
-      <img src="https://www.flexgigzz.com/wp-content/uploads/2021/04/bexer-bootstrap-business-template.jpg" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title" style="color: black">Special title treatment</h5>
-        <p class="card-text" style="color: black">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-</div>
-@endsection
-
-@section('footer')
-
-@endsection --}}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,7 +6,7 @@ Templateize - Template for any Projects
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ url('css/styles.css') }}" type="text/css" rel='stylesheet'>
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous"> --}}
-    <title>@yield('title')</title>
+    <title>Templateize</title>
 </head>
 <body style="background-color: #ffffff"> 
 
@@ -108,7 +36,7 @@ Templateize - Template for any Projects
                       <a class="nav-link " href="{{ route('templates') }}">TEMPLATES</a>
                     </li>
                     <li class="nav-item px-4">
-                      <a class="nav-link"  href="{{ route('shopping') }}">FREE TEMPLATE</a>
+                      <a class="nav-link" active href="/templates">FREE TEMPLATE</a>
                     </li>
                     <div class="dropdown px-4">
                       <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -155,7 +83,6 @@ Templateize - Template for any Projects
   </nav> --}}
   @extends('layouts.app')
 
-
     @section('content')
 
       <div id="carouselExampleCaptions" class="carousel slide" style="height:20%" data-bs-ride="false">
@@ -169,21 +96,21 @@ Templateize - Template for any Projects
             <img src="https://i.pinimg.com/originals/d8/45/84/d84584e64ab8d30cbcbcd19269bd98c7.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption" style="bottom: 35%">
               <h1>Templateize</h1>
-              <p>Proffesional Website Template for Any Project</p>
+              <p>Professional Website Template for Any Project</p>
             </div>
           </div>
           <div class="carousel-item">
             <img src="https://w0.peakpx.com/wallpaper/1022/653/HD-wallpaper-flower-colourful-evening-full-green-graphy-sunset-white-yellow.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption" style="bottom: 35%">
               <h1>Templateize</h1>
-              <p>Proffesional Website Template for Any Project</p> 
+              <p>Professional Website Template for Any Project</p> 
             </div>
           </div>
           <div class="carousel-item">
             <img src="https://computory.com/wp-content/uploads/2020/11/spek-game-red-dead-redemption-2-computory.jpg" class="d-block w-100" alt="...">
             <div class="carousel-caption" style="bottom: 35%">
               <h1>Templateize</h1>
-              <p>Proffesional Website Template for Any Project</p>
+              <p>Professional Website Template for Any Project</p>
             </div>
           </div>
         </div>
@@ -203,7 +130,7 @@ Templateize - Template for any Projects
       <div class="container mt-5 mb-5 ml-0">
 
         {{-- @yield('container') --}}
-        <h3>Proffesional Websites <br> Template for Any Project</h3><br>
+        <h3>Professional Websites <br> Template for Any Project</h3><br>
 
         {{-- @yield('search') <br><br> --}}
         <form class="d-flex" role="search">
