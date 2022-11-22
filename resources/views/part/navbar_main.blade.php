@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                
                 <a class="navbar-brand" href="{{ url('/') }}">
                   <img src="{{ asset('img/Templateize.png') }}" alt="" width="100">
                 </a>
@@ -26,22 +27,11 @@
                             <li class="nav-item px-4">
                               <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
                             </li>
-                            <div class="dropdown px-4">
                             
-                        {{-- @if(Auth::check() && Auth::user()->level == 'admin')
-                            <li class="nav-item px-4">
-                                <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
-                            </li>
-                            <li class="nav-item px-4">
-                                <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
-                            </li>
-                            <li class="nav-item px-4">
-                                <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
-                            </li>
-                        @endif --}}
+                            <li class="nav-item dropdown px-4">
 
-                              <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Account
+                              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
+                                ACCOUNT 
                               </a>
                             
                               <ul class="dropdown-menu">
@@ -56,6 +46,7 @@
                                         <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                     </li>
                                 @endif
+                              </ul>
                                 @else
                                 
                                 {{-- admin --}}
@@ -67,7 +58,7 @@
                                     <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
                                 </li>
                                 <li class="nav-item px-4">
-                                    <a class="nav-link" active href="#">{{ __('FREE TEMPLATES') }}</a>
+                                    <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
                                 </li>
 
                                 <li class="nav-item dropdown">
@@ -80,7 +71,7 @@
                                     @if(Auth::check() && Auth::user()->level == 'admin')
                                     
                                         <a class="dropdown-item" href="{{ route('dBoardAdmin') }}">
-                                            {{ __('Dahboard') }}
+                                            {{ __('Dashboard') }}
                                         </a>
 
                                         {{-- <a class="dropdown-item" href="{{ route('user.index') }}">
@@ -106,6 +97,7 @@
                                         </form>
                                     </div> 
                                 </li>
+
                                 @endif
                                 
                                 {{-- customer --}}
@@ -117,9 +109,9 @@
                                     <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
                                 </li>
                                 <li class="nav-item px-4">
-                                    <a class="nav-link" active href="#">{{ __('FREE TEMPLATES') }}</a>
+                                    <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
                                 </li>
-                                @endif
+                                
 
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
@@ -131,30 +123,7 @@
                                     @if(Auth::check() && Auth::user()->level == 'customer')
                                     
                                         <a class="dropdown-item" href="{{ route('dBoardCust') }}">
-                                            {{ __('Dahboard') }}
-                                        </a>
-                                        
-                                    @endif
-        
-                                        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form> --}}
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                          onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-        
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
-                                    </div>
-
-                                    
-        
-                                    
-                                        <a class="dropdown-item" href="{{ route('dBoardCust') }}">
-                                            {{ __('Dahboard') }}
+                                            {{ __('Dashboard') }}
                                         </a>
                                         
                                     @endif
@@ -173,8 +142,98 @@
                                         </form>
                                     </div> 
                                 </li>
+                                @endif
+
+                                {{-- contributor --}}
+                                @if(Auth::check() && Auth::user()->level == 'contributor')
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
+                                </li>
+                                
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if(Auth::check() && Auth::user()->level == 'customer')
+                                    
+                                        <a class="dropdown-item" href="{{ route('dBoardCust') }}">
+                                            {{ __('Dashboard') }}
+                                        </a>
+                                        
+                                    @endif
+        
+                                        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form> --}}
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                          onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+        
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div> 
+                                </li>
+                                @endif
+
+                                {{-- contributor --}}
+                                @if(Auth::check() && Auth::user()->level == 'contributor')
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" href="{{ route('home') }}">{{ __('HOME') }}</a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link " href="{{ route('templates') }}">{{ __('TEMPLATES') }}</a>
+                                </li>
+                                <li class="nav-item px-4">
+                                    <a class="nav-link" active href="{{ route('shopping') }}">{{ __('FREE TEMPLATES') }}</a>
+                                </li>
+                                
+
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    
+                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    @if(Auth::check() && Auth::user()->level == 'contributor')
+                                    
+                                        <a class="dropdown-item" href="{{ route('dBoardCust') }}">
+                                            {{ __('Dashboard') }}
+                                        </a>
+                                        
+                                    @endif
+        
+                                        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form> --}}
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                          onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
+                                        </a>
+        
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div> 
+                                </li>
+                                @endif
+
                               </ul>
-                            </div>
+                            </li>
                             
                         @endguest
                     </ul>
